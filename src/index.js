@@ -6,8 +6,8 @@ import { Auth0Provider } from '@auth0/auth0-react';
 
 ReactDOM.render(
   <Auth0Provider
-    domain="diego-antivirus.us.auth0.com"
-    clientId="lbKa40zBOsig6ZEnwGQuI94l3BRQKUQk"
+    domain=""
+    clientId=""
     redirectUri={window.location.origin}
   >
     <BrowserRouter>

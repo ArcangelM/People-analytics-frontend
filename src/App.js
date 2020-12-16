@@ -6,9 +6,21 @@ import GlobalStyles from 'src/components/GlobalStyles';
 import 'src/mixins/chartjs';
 import theme from 'src/theme';
 import routes from 'src/routes';
+import { useAuth0 } from '@auth0/auth0-react';
+import Loading from './components/Loading';
 
 const App = () => {
   const routing = useRoutes(routes);
+
+  const { isLoading, error } = useAuth0();
+
+  if (error) {
+    return <div>Oops...{error.message}</div>;
+  }
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <ThemeProvider theme={theme}>
